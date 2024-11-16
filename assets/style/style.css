@@ -26,7 +26,7 @@ body::before {
     height: 90%;
     transform: translateX(-50%);
     content: '';
-    background-image: url(./assets/images/bg.png);
+    background-image: url(/PPC_Finals/assets/images/bg.png);
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: top center;
