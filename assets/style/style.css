@@ -1,0 +1,264 @@
+@import url('https://fonts.cdnfonts.com/css/ica-rubrik-black');
+@import url('https://fonts.cdnfonts.com/css/poppins');
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #d2d2d2;
+    background-image:
+        repeating-linear-gradient(to right, transparent 0 100px,
+            #25283b22 100px 101px),
+        repeating-linear-gradient(to bottom, transparent 0 100px,
+            #25283b22 100px 101px);
+}
+
+body::before {
+    position: absolute;
+    width: min(1400px, 90vw);
+    top: 10%;
+    left: 50%;
+    height: 90%;
+    transform: translateX(-50%);
+    content: '';
+    background-image: url(/assets/images/bg.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: top center;
+    pointer-events: none;
+}
+
+.banner {
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.banner .slider {
+    position: absolute;
+    width: 120px;
+    /* Reduced width */
+    height: 150px;
+    /* Reduced height */
+    top: 5%;
+    /* Slightly higher position */
+    left: calc(50% - 60px);
+    /* Centered */
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    animation: autoRun 40s linear infinite;
+    z-index: 2;
+    transform: 3d;
+}
+
+
+@keyframes autoRun {
+    from {
+        transform: perspective(1000px) rotateX(-16deg) rotateY(0deg);
+    }
+
+    to {
+        transform: perspective(1000px) rotateX(-16deg) rotateY(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.banner .slider .item {
+    position: absolute;
+    inset: 0 0 0 0;
+    transform:
+        rotateY(calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)) translateZ(475px) translateX(0px);
+    /* Reduced translateZ value */
+}
+
+.banner .slider .item img {
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.banner .slider .item a {
+    text-decoration: none;
+}
+
+
+
+.banner .slider .item p {
+    display: grid;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    text-shadow:2px 2px black;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.banner .slider .item:hover p {
+    opacity: 1;
+    transform: translateY(-90px);
+    max-width: 100%; 
+}
+
+.banner .slider .item p:hover ~ img {
+    border: 1px solid transparent;
+    box-shadow: 1px 1px 3px black;
+}
+
+
+
+.banner .content {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(1200px, 100vw);
+    /* Reduced width */
+    height: max-content;
+    padding-bottom: 50px;
+    /* Reduced padding */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+}
+
+
+.banner .content .model {
+    background-image: url(/assets/images/model.png);
+    width: 100%;
+    height: 110vh;
+    /* Image height */
+    position: absolute;
+    bottom: -250px;
+    left: 10px;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: top center;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.banner .content .model p {
+    font-family: 'ICA Rubrik';
+    font-size: 40px;
+    position: absolute;
+    left: 40%;
+    display: grid;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    opacity: 0;
+    transform: translateY(400px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.banner .content .model:hover p {
+    opacity: 1;
+    transform: translateY(-60px);
+    max-width: 100%; 
+    text-shadow: 1px 2px 1px #3b2525;
+}
+
+/* Responsive Top Link */
+.banner .content .TopLink {
+    position: absolute;
+    width: 18vw;
+    /* Use viewport width to make it responsive */
+    height: 110vh;
+    /* Use viewport height to make it responsive */
+    bottom: 0vh;
+    /* Set bottom relative to viewport height */
+    left: 49%;
+    /* Center the link horizontally */
+    transform: translateX(-50%);
+    /* Center it exactly */
+    z-index: 4;
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+.banner .content h1 {
+    font-family: 'ICA Rubrik';
+    font-size: 6em;
+    line-height: 1em;
+    color: #3b2525;
+    position: relative;
+    left: 5%;
+    top: 25px;
+    /* Adjusted from bottom: 100px to top: 20px */
+}
+
+.banner .content h1::after {
+    position: absolute;
+    inset: 0 0 0 0;
+    content: attr(data-content);
+    z-index: 2;
+    -webkit-text-stroke: 2px #d2d2d2;
+    color: transparent;
+}
+
+.banner .content  p::after {
+    position: absolute;
+    inset: 0 0 0 0;
+    content: attr(data-content);
+    z-index: 2;
+    -webkit-text-stroke: 2px #d2d2d2;
+    color: transparent;
+}
+
+
+.banner .content button { 
+    visibility: hidden;
+}
+
+.banner .content button i{ 
+    position:  absolute;
+    color: black;
+    left: -30px;
+    bottom: 30px;
+    font-size: 30px;
+    cursor: pointer;
+    background: transparent;
+    visibility: visible;
+}
+
+
+/* Fade animation */
+.fade {
+    animation: fadeOut 1s forwards;
+}
+
+/* Keyframes for fade-out transition */
+@keyframes fadeOut {
+    0% {
+        filter: blur(0%);
+        /* Start sharp */
+        opacity: 1;
+        /* Fully opaque */
+    }
+
+    100% {
+        filter: blur(2px);
+        /* Add slight blur as it fades */
+        opacity: 0;
+        /* Fully transparent */
+    }
+}

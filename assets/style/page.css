@@ -1,0 +1,207 @@
+@import url('https://fonts.cdnfonts.com/css/ica-rubrik-black');
+@import url('https://fonts.cdnfonts.com/css/poppins');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.fade {
+    animation: fadeOut 1s forwards;
+}
+
+body  {
+    background-color: whitesmoke;
+    overflow: auto;
+}
+
+.Container{
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    display: grid;
+    overflow: auto
+}
+
+.MainForm{
+    height: 2500px;
+    width: 820px;
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    background-color: white;
+    box-shadow:  1px 1px 10px black;
+}
+
+.MainForm img{
+    width: 820px;
+    height: 700px;
+}
+
+.Header{
+    height: 300px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.bold-text {
+    font-weight: bold;
+}
+
+p {
+    color: #111; 
+    position: relative;
+    top: 40px;
+    font-size: 40px;
+    font-weight: 300;  /* Set font weight for the whole paragraph */
+}
+
+h6{
+    position: relative;
+    bottom: 40px;
+    font-size: 20px;
+    color: #555; 
+}
+
+.SideForm{
+    display: grid;
+    height: 2500px;
+    width: 350px;
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    background-color: white;
+    box-shadow:  1px 1px 10px black;
+}
+
+.MainPage{
+    position:relative;
+    display:inline-block;
+    margin:20px;
+    height: 75px;
+    margin-top: -10px;
+    margin-bottom: 40px;
+  }
+ 
+.hideme{
+    visibility: hidden;
+} 
+
+
+  .MainPage a{
+    text-decoration: none;
+    visibility: visible;
+  }
+
+  .MainPage p{
+    cursor: pointer;
+    visibility: visible;
+    color:white;
+    font-family: 'poppins';
+    font-weight:bold;
+    font-size:30px;
+    text-align: center;
+    text-decoration:none;
+    background-color:#FFA12B;
+    display:block;
+    position:relative;
+    padding:20px 40px;
+    
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    text-shadow: 0px 1px 0px #000;
+    filter: dropshadow(color=#000, offx=0px, offy=1px);
+    
+    -webkit-box-shadow:inset 0 1px 0 #FFE5C4, 0 10px 0 #915100;
+    -moz-box-shadow:inset 0 1px 0 #FFE5C4, 0 10px 0 #915100;
+    box-shadow:inset 0 1px 0 #FFE5C4, 0 10px 0 #915100;
+    
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+  }
+
+  .MainPage p:hover{
+    color: rgb(245, 245, 245);
+  }
+  
+  .MainPage p:active{
+    text-decoration: none;
+    bottom: -20px;
+    background-color:#F78900;
+    
+    -webkit-box-shadow:inset 0 1px 0 #FFE5C4, inset 0 -3px 0 #915100;
+    -moz-box-shadow:inset 0 1px 0 #FFE5C4, inset 0 -3pxpx 0 #915100;
+    box-shadow:inset 0 1px 0 #FFE5C4, inset 0 -3px 0 #915100;
+  }
+  
+  .MainPage:after{
+    text-decoration: none;
+    content:"";
+    height:100%;
+    width:100%;
+    padding:4px;
+    position: absolute;
+    bottom:-15px;
+    left:-4px;
+    z-index:-1;
+    background-color:#2B1800;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+  }
+
+.item{
+    position: relative;
+    top: 30px;
+}
+
+.item img {
+    width: 90%;          /* Make the image stretch to the full width of its container */
+    height: auto;         /* Maintain aspect ratio */
+    border-radius: 10px;  /* Optional: Add rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  /* Optional: Add shadow */
+    transition: transform 0.3s ease;  /* Optional: Add smooth transition for hover effect */
+}
+
+.SideForm .item a{
+    text-decoration: none;
+}
+
+.SideForm .item p {    
+    font-size: 30px;
+    display: grid;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    text-shadow:2px 2px black;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.SideForm .item:hover p {
+    opacity: 1;
+    transform: translateY(-150px);
+    max-width: 100%; 
+}
+
+/* Keyframes for fade-out transition */
+@keyframes fadeOut {
+    0% {
+        filter: blur(0%);
+        /* Start sharp */
+        opacity: 1;
+        /* Fully opaque */
+    }
+
+    100% {
+        filter: blur(2px);
+        /* Add slight blur as it fades */
+        opacity: 0;
+        /* Fully transparent */
+    }
+}
