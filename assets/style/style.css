@@ -26,7 +26,7 @@ body::before {
     height: 90%;
     transform: translateX(-50%);
     content: '';
-    background-image: url(/assets/images/bg.png);
+    background-image: url(./assets/images/bg.png);
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: top center;
@@ -142,7 +142,7 @@ body::before {
 
 
 .banner .content .model {
-    background-image: url(/assets/images/model.png);
+    background-image: url(//assets/images/model.png);
     width: 100%;
     height: 110vh;
     /* Image height */
