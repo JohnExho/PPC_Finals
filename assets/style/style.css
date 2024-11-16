@@ -232,7 +232,7 @@ body::before {
 .banner .content button i{ 
     position:  absolute;
     color: black;
-    left: -30px;
+    left: -50px;
     bottom: 30px;
     font-size: 30px;
     cursor: pointer;
