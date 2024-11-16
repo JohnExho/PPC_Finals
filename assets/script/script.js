@@ -81,11 +81,11 @@ buttonElement.addEventListener('click', () => {
     const icon = buttonElement.querySelector('i');
 
     // Check the current icon and toggle
-    if (icon.classList.contains('bx-volume-full') {
-        icon.classList.remove('bx-volume-full');
-        icon.classList.add('bx-pause');
-    } else {
+    if (icon.classList.contains('bx-pause')) {
         icon.classList.remove('bx-pause');
         icon.classList.add('bx-volume-full');
+    } else {
+        icon.classList.remove('bx-volume-full');
+        icon.classList.add('bx-pause');
     }
 });
